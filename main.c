@@ -20,15 +20,7 @@
 #define Buzzer_ON DIO_WritePin(PINC5,HIGH)
 #define Buzzer_OFF DIO_WritePin(PINC5,LOW)
 
- void func_OCA(void)
- {
-	DIO_WritePin(PINC5,LOW);
- }
-void func_OCB(void)
-{
-DIO_WritePin(PINC5,HIGH);
-}
-
+ 
 
 int main(void)
 {
@@ -39,24 +31,7 @@ int main(void)
 
 	ADC_Init(VREF_VCC,ADC_SCALER_64);
 UART_Init();
-/*********************************** Interrupt*******************************/
-	
-	/*EXI_TriggerEdge(EX_INT1,FALLING_EDGE);
-	EXI_Enable(EX_INT1);*/
-	// EXI_SetCallBack(EX_INT1,functio1);
-/************************ Timer ****************************/
-	/*TIMER0_Init(TIMER0_FASTPWM_MODE,TIMER0_SCALER_8);
-	TIMER0_OC0Mode(OC0_NON_INVERTING);
-	
-	Timer1_Init(TIMER1_FASTPWM_ICR_TOP_MODE,TIMER1_SCALER_8); // fast pwm mode scaler 8
-	Timer1_OCRA1Mode(OCRA_NON_INVERTING);
-	Timer1_OCRB1Mode(OCRA_NON_INVERTING);
-	
-	Timer1_OCB_InterruptEnable();
-	Timer1_OCA_InterruptEnable();
-	Timer1_OCA_SetCallBack(func_OCA);
-	Timer1_OCB_SetCallBack(func_OCB);*/
-/********************************************************/
+
 Timer1_Init(TIMER1_NORMAL_MODE,TIMER1_SCALER_8);
 ULTRASONIC_Init();
 /*
