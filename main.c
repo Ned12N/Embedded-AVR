@@ -28,7 +28,7 @@ int main(void)
 /*******************************Initilization *******************************/
 	DIO_Init();
 	LCD_Init();
-
+LCD2_Init();
 	ADC_Init(VREF_VCC,ADC_SCALER_64);
 UART_Init();
 
